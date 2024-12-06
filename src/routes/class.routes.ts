@@ -17,7 +17,7 @@ classRouter.post('/', async (req, res) => {
         const classes = await AppDataSource.getRepository('Class').save(req.body);
         res.json(classes);
     } catch (error) {
-        console.log('Erro ao salvar a classe: ', error);
+        console.log('Erro ao salvar a classe: ', error.message);
         res.status(500).json({ message: 'Erro ao salvar a classe' });
     }
 });
