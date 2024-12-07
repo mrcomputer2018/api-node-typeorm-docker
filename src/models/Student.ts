@@ -1,22 +1,28 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export default class Student {
     @PrimaryGeneratedColumn('uuid')
-    id:string
+    id: string;
 
-    @Column("varchar", { length: 100, nullable: false })
-    name: string
+    @Column('varchar', { length: 100, nullable: false })
+    name: string;
 
-    @Column("int", { nullable: false })
-    age: number
+    @Column('int', { nullable: false })
+    age: number;
 
-    @Column("int", { nullable: false })
-    key: number
+    @Column('int', { nullable: false })
+    key: number;
 
     @CreateDateColumn()
-    created_at: Date
+    created_at: Date;
 
     @UpdateDateColumn()
-    updated_at: Date
+    updated_at: Date;
 }
