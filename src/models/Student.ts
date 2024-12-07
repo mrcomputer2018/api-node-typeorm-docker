@@ -14,6 +14,9 @@ export default class Student {
     @Column('varchar', { length: 100, nullable: false })
     name: string;
 
+    @Column('varchar', { length: 100, nullable: false, unique: true })
+    email:string;
+
     @Column('int', { nullable: false })
     age: number;
 

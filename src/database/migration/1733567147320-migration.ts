@@ -26,6 +26,16 @@ export class Migration1733567147320 implements MigrationInterface {
                     isUnique: true
                 },
                 {
+                    name: "age",
+                    type: "int",
+                    isNullable: false
+                },
+                {
+                    name: "key",
+                    type: "int",
+                    isNullable: false
+                },
+                {
                     name: "created_at",
                     type: "timestamp",
                     isNullable: false,
@@ -42,6 +52,7 @@ export class Migration1733567147320 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("student");
     }
 
 }
