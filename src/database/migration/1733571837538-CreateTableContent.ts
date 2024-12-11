@@ -41,17 +41,7 @@ export class CreateTableContent1733571837538 implements MigrationInterface {
                         isNullable: false,
                         default: 'now()',
                     },
-                ],
-                foreignKeys: [
-                    {
-                        name: 'FKLesson',
-                        referencedTableName: 'lesson',
-                        referencedColumnNames: ['id'],
-                        columnNames: ['lesson_id'],
-                        onDelete: 'CASCADE',
-                        onUpdate: 'CASCADE',
-                    },
-                ],
+                ]
             }),
         );
     }
