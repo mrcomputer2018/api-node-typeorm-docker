@@ -2,9 +2,11 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
+import { Lesson } from './Lesson';
 
 @Entity('class')
 export class Class {
@@ -16,6 +18,9 @@ export class Class {
 
     @Column('integer', { nullable: false })
     duration: number;
+
+    @OneToMany(() => Lesson, classe => Class)
+    lessons: Lesson[];
 
     @CreateDateColumn()
     created_at: Date;
