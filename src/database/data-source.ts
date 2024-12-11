@@ -13,5 +13,5 @@ export const AppDataSource = new DataSource({
     entities: ['src/models/*.ts'],
     migrations: ['src/database/migration/*.ts'],
     subscribers: [],
-    migrationsTableName: "custom_migration_table",
+    migrationsTableName: 'custom_migration_table',
 });

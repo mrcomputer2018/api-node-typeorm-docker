@@ -1,4 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    JoinColumn,
+    OneToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+} from 'typeorm';
+import { Content } from './Content';
 
 @Entity('lesson')
 export class Lesson {
@@ -10,6 +19,9 @@ export class Lesson {
 
     @Column('varchar', { length: 255, nullable: false })
     description: string;
+
+    @OneToOne(() => Content,  lesson => Lesson)
+    content: Content
 
     @CreateDateColumn()
     created_at: Date;
