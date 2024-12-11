@@ -25,6 +25,11 @@ export class CreateTableContent1733571837538 implements MigrationInterface {
                         length: '100',
                     },
                     {
+                        name: 'lesson_id',
+                        type: 'uuid',
+                        isNullable: false,
+                    },
+                    {
                         name: 'created_at',
                         type: 'timestamp',
                         isNullable: false,
@@ -35,6 +40,16 @@ export class CreateTableContent1733571837538 implements MigrationInterface {
                         type: 'timestamp',
                         isNullable: false,
                         default: 'now()',
+                    },
+                ],
+                foreignKeys: [
+                    {
+                        name: 'FKLesson',
+                        referencedTableName: 'lesson',
+                        referencedColumnNames: ['id'],
+                        columnNames: ['lesson_id'],
+                        onDelete: 'CASCADE',
+                        onUpdate: 'CASCADE',
                     },
                 ],
             }),
